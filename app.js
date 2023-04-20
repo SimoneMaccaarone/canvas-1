@@ -15,8 +15,8 @@ for (let i = 0; i < 100; i++) {
     const width = Math.random() * 100;
     const height = Math.random() * 100;
 
-    ctx.strokeStyle= getRandomColor();
-    ctx.strokeRect(originX, originY, width, height);
+    ctx.fillStyle= getRandomColor();
+    ctx.fillRect(originX, originY, width, height);
 }
 function getRandomColor() {
     let letters = '0123456789ABCDEF';
