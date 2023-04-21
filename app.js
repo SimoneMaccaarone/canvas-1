@@ -10,7 +10,7 @@ function step(){
     newGeneration.draw(ctx);
 
     if(newGeneration.isDead()){
-        ctx.fillStyle = 'rgba(0,0,0,0.1)'
+        ctx.fillStyle = 'rgba(0,0,0,0.5)'
         ctx.fillRect(0,0,myCanvas.width, myCanvas.height)
         newGeneration = Generation.generateRandom(100,myCanvas.width, myCanvas.height);
     }
