@@ -1,38 +1,23 @@
 const myCanvas = document.getElementById('my-canvas');
 const ctx = myCanvas.getContext('2d');
 
+let newGeneration = Generation.generateRandom(100,myCanvas.width, myCanvas.height);
+console.log(newGeneration);
 
-//--- Creation Point/pixel
-const point = {
-    x: 300,
-    y: 300
+
+function step(){
+
+    newGeneration.draw(ctx);
+
+    if(newGeneration.isDead()){
+        ctx.fillStyle = 'rgba(0,0,0,0.1)'
+        ctx.fillRect(0,0,myCanvas.width, myCanvas.height)
+        newGeneration = Generation.generateRandom(100,myCanvas.width, myCanvas.height);
+    }
+    window.requestAnimationFrame(step);
 }
 
-
-setInterval(() => {
-
-    const randomX = (Math.random() * 4) - 2;
-    const randomY = (Math.random() * 4) - 2;
-
-
-    ctx.fillStyle = getRandomColorRGB();
-    ctx.fillRect(point.x, point.y, 4, 4);
-
-    point.x += randomX;
-    point.y += randomY;
-
-}, 1);
-
-
-
-function getRandomColorRGB() {
-    const red = Math.floor(Math.random() * 256);
-    const green = Math.floor(Math.random() * 256);
-    const blue = Math.floor(Math.random() * 256);
-    const alpha = Math.random();
-
-    return ctx.fillStyle = `rgba(${red},${green},${blue}`
-}
+window.requestAnimationFrame(step);
 
 function getRandomColorRGBA() {
     const red = Math.floor(Math.random() * 256);
@@ -40,5 +25,5 @@ function getRandomColorRGBA() {
     const blue = Math.floor(Math.random() * 256);
     const alpha = Math.random();
 
-    return ctx.fillStyle = `rgba(${red},${green},${blue},${alpha})`
+    return ctx.fillStyle = `rgba(${red},${green},${blue},${alpha})`;
 }
