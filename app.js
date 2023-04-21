@@ -16,7 +16,7 @@ setInterval(() => {
 
 
     ctx.fillStyle = getRandomColorRGB();
-    ctx.fillRect(point.x, point.y, 2, 2);
+    ctx.fillRect(point.x, point.y, 4, 4);
 
     point.x += randomX;
     point.y += randomY;
