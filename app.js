@@ -1,7 +1,7 @@
 const myCanvas = document.getElementById('my-canvas');
 const ctx = myCanvas.getContext('2d');
 
-let newGeneration = Generation.generateRandom(100,myCanvas.width, myCanvas.height);
+let newGeneration = Generation.generateRandom(200,myCanvas.width, myCanvas.height);
 console.log(newGeneration);
 
 
@@ -12,7 +12,7 @@ function step(){
     if(newGeneration.isDead()){
         ctx.fillStyle = 'rgba(0,0,0,0.5)'
         ctx.fillRect(0,0,myCanvas.width, myCanvas.height)
-        newGeneration = Generation.generateRandom(100,myCanvas.width, myCanvas.height);
+        newGeneration = Generation.generateRandom(200,myCanvas.width, myCanvas.height);
     }
     window.requestAnimationFrame(step);
 }

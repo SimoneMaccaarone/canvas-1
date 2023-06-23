@@ -1,12 +1,34 @@
-
+html,*{
+    margin: 0%;
+    padding: 0%;
+}
 
 body
 {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0%;
+    padding: 0%;
     background-color: blanchedalmond;
 }
 
 
 
 .my-canvas{
+    margin: 0%;
+    padding: 0%;
     background-color: black;
+    height: 100%;
+
 }
+
+/* 
+body {
+    margin: 0%;
+    padding: 0%;
+    border-color: white;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+} */
